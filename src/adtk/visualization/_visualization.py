@@ -198,7 +198,10 @@ def plot(
 
     """
     # setup style
-    plt.style.use("seaborn-whitegrid")
+    if "seaborn-whitegrid" in plt.style.available:
+        plt.style.use("seaborn-whitegrid")
+    elif "seaborn-v0_8-white grid" in plt.style.available:
+        plt.style.use("seaborn-v0_8-white grid")
 
     # initialize color generator
     color_generator = ColorGenerator()
